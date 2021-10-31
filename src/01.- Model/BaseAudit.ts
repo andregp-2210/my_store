@@ -1,6 +1,6 @@
 export class BaseAudit {
     public createdBy: string;
-    public createdAt: string;
+    public createdAt: Date;
     public modifiedBy: string;
-    public modifiedAt: string;
+    public modifiedAt: Date;
 }
