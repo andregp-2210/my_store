@@ -30,7 +30,9 @@
   },
   "dependencies": {
     "dotenv": "^10.0.0",
-    "pg": "^8.7.1"
+    "express": "^4.17.1",
+    "pg": "^8.7.1",
+    "reflect-metadata": "^0.1.13"
   },
   "lint-staged": {
     "src/**/*.ts": [

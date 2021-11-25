@@ -1,8 +1,8 @@
-import { Category } from "../01.- Model/Category";
+import { Product } from "../01.- Model/Product";
 import { IUnitOfWork } from "../03.- UnitOfWork/UnitOfWork.Interfaces/IUnitOfWork";
 import { IUnitOfWorkAdapter } from "../03.- UnitOfWork/UnitOfWork.Interfaces/IUnitOfWorkAdapter";
 
-export class CategoryService {
+export class ProductService {
     private _unitOfWork: IUnitOfWork;
     private _context: IUnitOfWorkAdapter;
     //#region Constructor
@@ -11,28 +11,28 @@ export class CategoryService {
     }
     //#endregion
     //#region   Select
-    async getAll(): Promise<Category[]> {
+    async getAll(): Promise<Product[]> {
         try {
             this._context = this._unitOfWork.Create();
-            return this._context.Repositories.CategoryRepository.getAll();
+            return this._context.Repositories.ProductRepository.getAll();
         } catch (error) {
             console.log(error)
         }
     }
-    async get(id: number): Promise<Category> {
+    async get(id: number): Promise<Product> {
         try {
             this._context = this._unitOfWork.Create();
-            return this._context.Repositories.CategoryRepository.get(id);
+            return this._context.Repositories.ProductRepository.get(id);
         } catch (error) {
             console.log(error)
         }
     }
     //#endregion
     //#region   Insert
-    async create(category: Category): Promise<Category> {
+    async create(product: Product): Promise<Product> {
         try {
             this._context = this._unitOfWork.Create();
-            return this._context.Repositories.CategoryRepository.create(category);
+            return this._context.Repositories.ProductRepository.create(product);
         } catch (error) {
             console.log(error)
         }
@@ -42,17 +42,17 @@ export class CategoryService {
     async remove(id: number): Promise<void> {
         try {
             this._context = this._unitOfWork.Create();
-            return this._context.Repositories.CategoryRepository.remove(id);
+            return this._context.Repositories.ProductRepository.remove(id);
         } catch (error) {
             console.log(error)
         }
     }
     //#endregion
     //#region   Update
-    async update(category: Category): Promise<Category> {
+    async update(product: Product): Promise<Product> {
         try {
             this._context = this._unitOfWork.Create();
-            return this._context.Repositories.CategoryRepository.update(category);
+            return this._context.Repositories.ProductRepository.update(product);
         } catch (error) {
             console.log(error)
         }

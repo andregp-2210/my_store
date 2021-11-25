@@ -7,7 +7,7 @@ export class Product extends BaseAudit {
     public description: string;
     public price: number;
     public categoryId: number;
-    public category: Category;
+    public category: Category = new Category();
     public inventoryId?: number;
     public discountId?: number;
 }
